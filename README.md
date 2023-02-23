@@ -42,14 +42,10 @@ Namespaces prod and staging should be used for isolation and segmentation
 
 For autoscaling based on network latency
 
+Assuning request counts are being scraped from your monitoring tool e.g Prometheus
 
+then
 
+kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/3059066e1e157beaa0935639c43e6158dea20933/networklatency.yaml
 
-
-
-
-
-
-
-
-Then, your HorizontalPodAutoscaler would attempt to ensure that each pod was consuming roughly 50% of its requested CPU, serving 1000 packets per second, and that all pods behind the main-route Ingress were serving a total of 10000 requests per second.
+Then, your HorizontalPodAutoscaler would attempt to ensure that each pod was consuming roughly 70% of its requested CPU, serving 1000 packets per second, and that all pods behind the main-route Ingress were serving a total of 5000 requests per second.
