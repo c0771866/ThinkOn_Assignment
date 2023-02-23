@@ -22,3 +22,22 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 kubectl get deployment metrics-server -n kube-system
 
+kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/1018659b5da80d3b9a2a0c52113c883b6cbe567c/Container1.yaml
+
+
+Repeat above steps for container 2
+
+Question4
+IAM controls should include creating the required necessary role binding and roles in the aws eks config map in the kubesystem namespace
+
+add userarn to configmap
+
+Map roles and rolebinding
+
+create the require role and rolebinding object
+
+
+Namespaces prod and staging should be used for isolation and segmentation
+
+
+For autoscaling based on network latency
