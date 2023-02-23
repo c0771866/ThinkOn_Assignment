@@ -41,3 +41,15 @@ Namespaces prod and staging should be used for isolation and segmentation
 
 
 For autoscaling based on network latency
+
+
+
+
+
+
+
+
+
+
+
+Then, your HorizontalPodAutoscaler would attempt to ensure that each pod was consuming roughly 50% of its requested CPU, serving 1000 packets per second, and that all pods behind the main-route Ingress were serving a total of 10000 requests per second.
