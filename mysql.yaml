@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sql-deployment
+  labels:
+    name: db-sql
+spec:
+  containers:
+  - name: mysql
+    image: mysql:latest
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: mysql-pass
+          key: password
+    ports:
+    - name: mysql
+      containerPort: 3306
+      protocol: TCP
+    volumeMounts:
+    - name: k8s-mysql-storage
+      mountPath: /var/lib/db
+  volumes:
+  - name: k8s-mysql-storage
+    emptyDir: {}
+---    
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  labels:
+    name: db-sql
+spec:
+  ports:
+  - port: 3306
+  selector:
+    name: db-sql
+  type: ClusterIP
