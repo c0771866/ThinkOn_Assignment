@@ -24,7 +24,9 @@ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/late
 
 kubectl get deployment metrics-server -n kube-system
 
-kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/1018659b5da80d3b9a2a0c52113c883b6cbe567c/Container1.yaml
+Deploy mysql database
+
+kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/3755955e2055ca269f9c0f717175603114f5e7f8/mysql.yaml
 
 
 Repeat above steps for container 2
