@@ -37,3 +37,11 @@ spec:
   selector:
     name: db-sql
   type: ClusterIP
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-pass
+type: Opaque
+data:
+  password: YWRtaW4=
