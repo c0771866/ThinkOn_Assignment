@@ -9,7 +9,9 @@ Prerequisites
 Before deploying this application, you will need the following:
 
 A Kubernetes cluster
+
 kubectl command-line tool
+
 Docker installed on your local machine (if you want to build and push your own Docker images)
 
 
