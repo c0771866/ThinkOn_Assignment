@@ -32,3 +32,15 @@ spec:
                 secretKeyRef:
                   name: db-creds
                   key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user:image service
+spec:
+  type: ClusterIP
+  selector:
+    app: api
+  ports:
+  - port: 8282
+    targetPort: 8282
