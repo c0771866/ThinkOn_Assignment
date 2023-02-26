@@ -65,6 +65,7 @@ vii) Map roles and rolebinding
 viii) create the required k8s objects role and rolebinding with resources :deployment" and verbs "rollback" "undo" "rollon"
 
 BONUS
+  
 Namespaces prod and staging should be used for isolation and segmentation
 
 
