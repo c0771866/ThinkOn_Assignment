@@ -17,8 +17,6 @@ Docker installed on your local machine (if you want to build and push your own D
 
 Deployment
 
-Deploy the Metrics Server
-
 Deploy the Metrics Server with the following command:
 
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
@@ -27,8 +25,7 @@ kubectl get deployment metrics-server -n kube-system
 
 Deploy mysql database
 
-kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/3755955e2055ca269f9c0f717175603114f5e7f8/mysql.yaml
-
+  
 PROCEDURE
 
 a) docker build -t user-image .
