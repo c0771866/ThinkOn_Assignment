@@ -34,7 +34,9 @@ b) docker push <docker-hub-registry>/user-image:1
 
 c) kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/ad1ac61740cb3d2fc3cc339c37f60a0befda3176/container1.yaml
 
+Deploy horizontal port operator
 
+d) kubectl apply -f 
 
 Repeat above steps for container 2
 
