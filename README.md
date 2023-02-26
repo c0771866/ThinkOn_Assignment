@@ -36,20 +36,35 @@ c) kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/ad1ac617
 
 Deploy horizontal port operator
 
-d) kubectl apply -f 
+QUESTION 2
+
+d) kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/921cf29b3cf364205137ebcc744defdd2722a99a/hpa.yaml
 
 Repeat above steps for container 2
 
+QUESTION 3
+
+The default strategy is rolling update in the container1.yaml file which would allow  rolling deployments and rollback
+
 Question4
-IAM controls should include creating the required necessary role binding and roles in the aws eks config map in the kubesystem namespace
 
-add userarn to configmap
+i) On AWS console,create a user named dev and assign to "dev" group. Assign programmatic access and obtain the arn
 
-Map roles and rolebinding
+ii) Create a policy. Chooose EKS service. Select least privilege actions required to run this task which is to deploy and roll back - List, Read, Write as may be
 
-create the require role and rolebinding object
+iii) Create policy and attach to dev group or dev user as case may be
 
+iv) Run aws eks update -kubeconfig --name<cllustername> --region<regionName>
 
+v) kubectl edit configmap -n kube-system
+
+vi) add userarn to configmap
+
+vii) Map roles and rolebinding
+
+viii) create the required k8s objects role and rolebinding with resources :deployment" and verbs "rollback" "undo" "rollon"
+
+BONUS
 Namespaces prod and staging should be used for isolation and segmentation
 
 
