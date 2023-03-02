@@ -80,3 +80,5 @@ kubectl apply -f https://github.com/c0771866/ThinkOn_Assignment/blob/3059066e1e1
 Then, your HorizontalPodAutoscaler would attempt to ensure that each pod was consuming roughly 70% of its requested CPU, serving 1000 packets per second, and that all pods behind the main-route Ingress were serving a total of 5000 requests per second.
 
 A cron job with the bellcurve.yaml for each container has been provided to autoscale between 7am and 6pm (peak 70% cpu usage) and between 6pm - 7am (off peak 30% cpu usage
+
+Finally follow above steps for container2
