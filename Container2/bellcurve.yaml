@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: daily-bell-curve-scaler
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: scaler
+            image: user-image:1
+            command: ["/bin/sh", "-c", "kubectl autoscale deployment my-deployment --min=1 --max=5 --cpu-percent=$(expr $(date +%H) \< 7 \|\| $(date +%H) \> 18 ? 30 : 70)"]
+          restartPolicy: OnFailure
