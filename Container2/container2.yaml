@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shift
+  template:
+    metadata:
+      labels:
+        app: shift
+    spec:
+      containers:
+        - name: shiftcontainer
+          image: shift-image:1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              value: your-db-host
+            - name: DB_NAME
+              value: your-db-name
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-creds
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-creds
+                  key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user:image service
+spec:
+  type: ClusterIP
+  selector:
+    app: shift
+  ports:
+  - port: 80
+    targetPort: 5000
