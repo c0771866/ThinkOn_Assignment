@@ -16,7 +16,7 @@ spec:
         - name: api
           image: user-image:1
           ports:
-            - containerPort: 8080
+            - containerPort: 8282
           env:
             - name: DB_HOST
               value: your-db-host
@@ -42,5 +42,5 @@ spec:
   selector:
     app: api
   ports:
-  - port: 8282
+  - port: 80
     targetPort: 8282
