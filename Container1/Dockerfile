@@ -1,10 +1,12 @@
-FROM python:3.9-slim-buster
+FROM python:3
 
-WORKDIR /tmp
+WORKDIR /usr/src/app
 
-COPY . .
+COPY requirements.txt ./
 
 EXPOSE 8080
+
+COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
